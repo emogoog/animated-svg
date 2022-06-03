@@ -1,4 +1,7 @@
 <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="myDot" width="10" height="10" viewBox="0 0 2 2">
+    <circle cx="1" cy="1" r="1" />
+  </symbol>
   <symbol id="background-fill">
     <rect width="500" height="500" fill="white"/>
   </symbol>
