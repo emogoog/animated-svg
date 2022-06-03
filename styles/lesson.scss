@@ -6,6 +6,7 @@
 .lesson-page {
   display: flex;
   flex-flow: column;
+  min-width: vars.$content-min-width;
 }
 
 .lesson-header {
