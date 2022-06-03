@@ -6,10 +6,22 @@
 .lesson-page {
   display: flex;
   flex-flow: column;
+  min-width: vars.$content-min-width;
 }
 
 .lesson-header {
-  background-color: grey;
+  background-image: url('https://kstatic.googleusercontent.com/files/1d0bdeb00459d18bdef90eb6c8b1a4a1b4a0f2397ae9c16cc67c2ce5d55d209c6bd420677a2181b4dde78b948102367948246d27f5ae88acaea411da3ed9cd00');
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
 }
 
 .header-content {
@@ -23,6 +35,8 @@
     vars.$spacing-desktop,
     vars.$spacing-mobile
   );
+  z-index: 2;
+  position: relative;
 
   &,
   .header-text {
