@@ -6,6 +6,7 @@
 .lesson-page {
   display: flex;
   flex-flow: column;
+  gap: vars.$spacing-desktop;
   min-width: vars.$content-min-width;
 }
 
@@ -76,12 +77,13 @@
   gap: vars.$spacing-desktop;
   @include mixins.responsive(
     padding,
-    vars.$page-padding,
-    vars.$page-padding-mobile
+    0 vars.$page-padding,
+    0 vars.$page-padding-mobile
   );
 }
 
-.disclaimer-text {
+.disclaimer-text,
+.link-out {
   color: colors.$grey-700;
   font-size: 12px;
   line-height: 16px;
