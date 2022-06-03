@@ -1,0 +1,74 @@
+@use 'mixins';
+@use 'vars';
+
+$remove-tray_tray: remove-tray_tray;
+.remove-tray .tray {
+  @include mixins.animator($remove-tray_tray, vars.$anim-length-remove-tray) {
+    // 0s
+    0%,
+    // 1s
+    11.11%,
+    // 2s
+    22.22%,
+    // 3s
+    33.33% {
+      transform: translate(14.8%, 34.6%);
+    }
+
+    // 4s
+    44.44%,
+    // 4.5s
+    50%,
+    // 5.5s
+    61.11% {
+      transform: translate(12.4%, 36%);
+    }
+
+    // 6.5s
+    72.22%,
+    // 7.5s
+    83.33%,
+    // 8.5s
+    94.44%,
+    // 9s
+    100% {
+      transform: translate(-10.2%, 47%);
+    }
+  }
+}
+
+$reinsert-tray_tray: reinsert-tray_tray;
+.reinsert-tray .tray {
+  @include mixins.animator($reinsert-tray_tray, vars.$anim-length-reinsert-tray) {
+    // 0s
+    0%,
+    // 1s
+    11.11%,
+    // 2s
+    22.22%,
+    // 3s
+    33.33%,
+    // 4s
+    44.44% {
+      transform: translate(-10.2%, 47%);
+    }
+    
+    // 5s
+    55.55%,
+    // 5.5s
+    61.11% {
+      transform: translate(-11.6%, 49.8%);
+    }
+
+    // 6.5s
+    72.22%,
+    // 7.5s
+    83.33%,
+    // 8.5s
+    94.44%,
+    // 9s
+    100% {
+      transform: translate(14.8%, 34.6%);
+    }
+  }
+}

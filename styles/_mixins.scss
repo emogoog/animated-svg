@@ -1,0 +1,9 @@
+@use 'vars';
+
+@mixin responsive($attribute, $desktop-value, $mobile-value) {
+  #{$attribute}: $desktop-value;
+  
+  @media all and (max-width: vars.$mobile-width-break) {
+    #{$attribute}: $mobile-value;
+  }
+}

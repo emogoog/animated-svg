@@ -1,0 +1,32 @@
+@use 'mixins';
+@use 'vars';
+
+$curtain-anim-name: curtain;
+.curtain {
+  fill: white;
+  
+  @include mixins.animator($curtain-anim-name, vars.$anim-length-remove-tray) {
+    // 0s
+    0% {
+      animation-timing-function: vars.$ease-out;
+      opacity: 1;
+    }
+
+    // 1s
+    11.11% {
+      opacity: 0;
+    }
+
+    // 7.5s
+    83.33% {
+      animation-timing-function: vars.$ease-in;
+      opacity: 0;
+    }
+
+    // 8.5s
+    94.44% {
+      opacity: 1;
+    }
+  }
+}
+

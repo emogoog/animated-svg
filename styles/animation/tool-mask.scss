@@ -1,0 +1,38 @@
+@use 'mixins';
+@use 'vars';
+
+$remove-tray_tool-mask: remove-tray_tool-mask;
+.remove-tray .tool-mask {
+  @include mixins.animator(
+    $remove-tray_tool-mask,
+    vars.$anim-length-remove-tray
+  ) {
+    // 0s
+    0%,
+    // 1s
+    11.11%,
+    // 2s
+    22.22%,
+    // 3s
+    33.33% {
+      transform: translate(-54.8%, 34%);
+    }
+
+    // 4s
+    44.44%,
+    // 4.5s
+    50%,
+    // 5.5s
+    61.11%,
+    // 6.5s
+    72.22%,
+    // 7.5s
+    83.33%,
+    // 8.5s
+    94.44%,
+    // 9s
+    100% {
+      transform: translate(-57.2%, 35%);
+    }
+  }
+}

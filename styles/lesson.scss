@@ -1,0 +1,124 @@
+@use 'animation';
+@use 'colors';
+@use 'mixins';
+@use 'vars';
+
+.lesson-header {
+  background-color: grey;
+  display: flex;
+  @include mixins.responsive(flex-flow, row nowrap, column nowrap);
+  justify-content: center;
+  max-width: vars.$content-max-width;
+  @include mixins.responsive(
+    padding,
+    vars.$spacing-desktop,
+    vars.$spacing-mobile
+  );
+
+  &,
+  .content {
+    @include mixins.responsive(
+      gap,
+      vars.$spacing-desktop,
+      vars.$spacing-mobile
+    );
+  }
+
+  .content {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: vars.$text-max-width;
+  }
+
+  .art {
+    flex: 1;
+    max-width: 50%;
+    height: 100%;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.lesson-content {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.disclaimer {
+  align-self: center;
+  color: colors.$grey-700;
+}
+
+.steps {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: vars.$content-max-width;
+  min-width: vars.$content-min-width;
+  @include mixins.responsive(
+    padding,
+    vars.$page-padding,
+    vars.$page-padding-mobile
+  );
+  row-gap: vars.$spacing-desktop;
+}
+
+.step {
+  background-color: colors.$grey-100;
+  border-radius: 8px;
+  @include mixins.responsive(flex-flow, row nowrap, column nowrap);
+  @include mixins.responsive(
+    padding,
+    vars.$spacing-desktop,
+    vars.$spacing-mobile
+  );
+  width: 100%;
+
+  &,
+  .content {
+    display: flex;
+    @include mixins.responsive(
+      gap,
+      vars.$spacing-desktop,
+      vars.$spacing-mobile
+    );
+  }
+
+  .content {
+    flex-flow: column nowrap;
+    flex: 1;
+  }
+
+  .art {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+.step-label {
+  color: colors.$grey-900;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.step-text {
+  color: colors.$grey-800;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.image {
+  padding-top: 100%;
+  position: relative;
+
+  svg {
+    bottom: 0;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+}

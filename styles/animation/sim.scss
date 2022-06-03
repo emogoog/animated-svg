@@ -1,0 +1,56 @@
+@use 'mixins';
+@use 'vars';
+
+.remove-tray .sim {
+  opacity: 0;
+}
+
+$reinsert-tray_sim: reinsert-tray_sim;
+.reinsert-tray .sim {
+  fill: white;
+  @include mixins.animator(
+    $reinsert-tray_sim,
+    vars.$anim-length-reinsert-tray
+  ) {
+    // 0s
+    0%,
+    // 1s
+    11.11% {
+      animation-timing-function: vars.$ease-out;
+      opacity: 0;
+      transform: translate(-37.4%, 41.6%);
+    }
+
+    // 2s
+    22.22%,
+    // 3s
+    33.33% {
+      animation-timing-function: vars.$ease-in-out;
+      opacity: 1;
+      transform: translate(17.4%, 41.6%);
+    }
+
+    // 4s
+    44.44% {
+      transform: translate(17.4%, 48.6%);
+    }
+
+    // 5s
+    55.55%,
+    // 5.5s
+    61.11% {
+      transform: translate(16%, 51.4%);
+    }
+
+    // 6.5s
+    72.22%,
+    // 7.5s
+    83.33%,
+    // 8.5s
+    94.44%,
+    // 9s
+    100% {
+      transform: translate(42.4%, 36.2%);
+    }
+  }
+}

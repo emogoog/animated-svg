@@ -1,0 +1,24 @@
+@use 'styles';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: Poppins;
+  background-color: white;
+}
+
+ol,
+li {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+.page-title,
+.page-description {
+  color: white;
+}
