@@ -3,11 +3,20 @@
 @use 'mixins';
 @use 'vars';
 
+.lesson-page {
+  display: flex;
+  flex-flow: column;
+}
+
 .lesson-header {
   background-color: grey;
+}
+
+.header-content {
   display: flex;
   @include mixins.responsive(flex-flow, row nowrap, column nowrap);
   justify-content: center;
+  margin: 0 auto;
   max-width: vars.$content-max-width;
   @include mixins.responsive(
     padding,
@@ -16,39 +25,84 @@
   );
 
   &,
-  .content {
+  .header-text {
     @include mixins.responsive(
       gap,
       vars.$spacing-desktop,
       vars.$spacing-mobile
     );
   }
+}
 
-  .content {
-    display: flex;
-    flex-flow: column nowrap;
-    max-width: vars.$text-max-width;
+.header-art {
+  flex: 1;
+  max-width: 240px;
+  min-width: 200px;
+  height: 100%;
+  margin: 0 auto;
+
+  img {
+    max-width: 100%;
   }
+}
 
-  .art {
-    flex: 1;
-    max-width: 50%;
-    height: 100%;
-
-    img {
-      max-width: 100%;
-    }
-  }
+.header-text {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
 }
 
 .lesson-content {
   display: flex;
   flex-flow: column nowrap;
+  gap: vars.$spacing-desktop;
+  @include mixins.responsive(
+    padding,
+    vars.$page-padding,
+    vars.$page-padding-mobile
+  );
 }
 
-.disclaimer {
-  align-self: center;
+.disclaimer-text {
   color: colors.$grey-700;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0 auto;
+  max-width: vars.$text-max-width;
+  @include mixins.responsive(
+    padding,
+    0 vars.$spacing-desktop,
+    0 vars.$spacing-mobile
+  );
+}
+
+.lesson-video {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+
+  .video-wrapper {
+    margin: 0 auto;
+    max-width: vars.$content-max-width;
+    width: 100%;
+  }
+
+  .video-container {
+    margin: 0 auto;
+    max-width: 80%;
+    padding-top: 43.75%;
+    position: relative;
+    width: 100%;
+  }
+
+  .video-embed {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 .steps {
@@ -56,11 +110,6 @@
   flex-flow: column nowrap;
   max-width: vars.$content-max-width;
   min-width: vars.$content-min-width;
-  @include mixins.responsive(
-    padding,
-    vars.$page-padding,
-    vars.$page-padding-mobile
-  );
   row-gap: vars.$spacing-desktop;
 }
 

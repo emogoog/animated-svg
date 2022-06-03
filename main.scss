@@ -21,4 +21,5 @@ li {
 .page-title,
 .page-description {
   color: white;
+  max-width: styles.$text-max-width;
 }
